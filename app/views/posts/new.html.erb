@@ -1,0 +1,23 @@
+<%= form_for @post, url: user_posts_path(current_user) do |f|  %>
+
+
+    <div>
+        <%= f.label "Title" %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label "Content" %>
+        <%= f.text_field :content %>
+    </div>
+
+    <div>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+
+
+    <div>
+        <%= f.submit 'Submit' %>
+    </div>
+
+<% end %>

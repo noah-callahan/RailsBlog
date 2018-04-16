@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   resources :posts
   get 'sessions/new'
-  resources :users
+  resources :users do
+    resources :posts
+  end
   get '/' => 'welcome#index'
   get '/signup' => 'users#new'
   root 'welcome#index'
