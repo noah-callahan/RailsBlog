@@ -2,10 +2,19 @@
 <p>Find me in app/views/users/show.html.erb</p>
 <h1><%=@user.fname%> <%=@user.lname%>'s profile</h1><br>
 
-<% if current_user == @user %><%= link_to "Create new post", new_user_post_path(current_user.id) %><% else %><% end %>
+<% if current_user == @user %><%= link_to "Create new post", new_user_post_path(current_user.id) %> <% else %><% end %>
+
+<% if current_user == @user %> <%= link_to "Edit Account", edit_user_path(current_user.id)  %><% else %><% end %>
 
 
 <% @posts.each do |post| %>
-    <h2><%=post.id  %> <%=post.title  %> <%= link_to 'Edit',  edit_user_post_path(current_user, post.id)%></h2>
+    <h2>
+    <%=post.id  %> <%=post.title  %>
+     <% if current_user == @user %>
+      <%= link_to 'Edit',  edit_user_post_path(current_user, post.id)%>
+      <%= link_to 'Delete', post, :method => :delete, :confirm => "Are you sure?" %>
+    <% else %>
+    <% end %>
+    </h2>
     <h2><%=post.content  %></h2>
 <% end %>
