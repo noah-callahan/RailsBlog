@@ -9,7 +9,7 @@
 
 # User.create(uname:"noahc", fname:"Noah", lname:"Callahan", email:"noahc1@gmail.com", password:"nycda")
 # User.create(uname:"testm", fname:"Test", lname:"Callahan", email:"testm@gmail.com", password:"nycda")
-# User.create(uname:"tima", fname:"Tim", lname:"Allen", email:"tima@gmail.com", password:"nycda")
+ User.create(uname:"tima", fname:"Tim", lname:"Allen", email:"tima@gmail.com", password:"nycda")
 
 
 # Post.create(title: "Testing Post", content:"database seed posts", user_id:1)
