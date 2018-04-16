@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts' => 'posts#index'
+  resources :posts
   get 'sessions/new'
   resources :users
   get '/' => 'welcome#index'
