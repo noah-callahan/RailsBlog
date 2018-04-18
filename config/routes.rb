@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   get 'posts' => 'posts#index'
   resources :posts
+  resources :comments
   get 'sessions/new'
   resources :users do
-    resources :posts
+    resources :posts 
   end
   get '/' => 'welcome#index'
   get '/signup' => 'users#new'

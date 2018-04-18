@@ -7,9 +7,9 @@
 <% if current_user == @user %> <%= link_to "Edit Account", edit_user_path(current_user.id)  %><% else %><% end %>
 
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
     <h2>
-    <%=post.id  %> <%=post.title  %>
+    <%=post.id  %> <%=link_to post.title, user_post_path(@user.id, post.id)  %>
      <% if current_user == @user %>
       <%= link_to 'Edit',  edit_user_post_path(current_user, post.id)%>
       <%= link_to 'Delete', post, :method => :delete, :confirm => "Are you sure?" %>

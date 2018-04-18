@@ -3,6 +3,15 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.where(post_id: @post.id)
+    puts "**********************"
+    puts @comments
+    puts "**********************"
+  end
+
   def new
     @post = Post.new
     @id = current_user.id
