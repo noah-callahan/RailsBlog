@@ -1,22 +1,26 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="container">
+    
+    <div class="login z-depth-5">
+        <h1>Log In</h1>
 
-<h1>Log In</h1>
+        <%= form_for(:session, url: login_path) do |f| %>
+           
+                <div class="form-group">
+                    <%= f.label :email %>
+                    <%= f.text_field :email%>
+                </div>
 
-<%= form_for(:session, url: login_path) do |f| %>
+                <div class="form-group">
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+            
+                <div class="button">
+                    <%= f.submit 'Log In', :class => 'btn btn-primary'%>
+    
+            </div>
 
-    <div>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+        <% end %>
+        
     </div>
-
-    <div>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-    </div>
-
-    <div>
-        <%= f.submit 'Log In' %>
-    </div>
-
-<% end %>
+</div>

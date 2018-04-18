@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     User.create(user_params)
-    redirect_to '/'
+    redirect_to '/login'
   end
 
   def show
@@ -30,6 +30,15 @@ class UsersController < ApplicationController
 
   def name
     
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: params[:id])
+    @posts.each(& :destroy)
+    @user.destroy
+    @current_user = nil
+    redirect_to '/'
   end
 
   private
