@@ -27,5 +27,5 @@
 <h1>Comments</h1>
     <% @comments.each do |f| %>
         <% @commentuser = User.find(f.user_id) %>
-        <h4>By: <%=@commentuser.fname  %></h4><% if @current_user == @commentuser %><h4>BUTTON HERE</h4><% else %><% end %> <p><%= f.content %></p>
+        <h4>By: <%=@commentuser.fname  %></h4><% if @current_user == @commentuser %><h4> <%= link_to 'Delete', f, :method => :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %></h4><% else %><% end %> <p><%= f.content %></p>
     <% end %>
