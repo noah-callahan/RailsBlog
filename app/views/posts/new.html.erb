@@ -4,12 +4,12 @@
 
     <div>
         <%= f.label "Title" %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, :maxlength => 15 %>
     </div>
 
     <div>
         <%= f.label "Content" %>
-        <%= f.text_area :content, :class => 'form-control' %>
+        <%= f.text_area :content, :class => 'form-control ', :maxlength => 300 %>
     </div>
 
     <div>
